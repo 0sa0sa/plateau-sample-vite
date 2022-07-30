@@ -22,6 +22,8 @@ npm start
 npm run deploy
 ```
 
+deploy target URL: <https://plateau-vite.web.app/>
+
 ## 参考
 
 [resium's document: installation by vite](https://resium.reearth.io/installation#5-vite)
