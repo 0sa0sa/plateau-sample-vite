@@ -10,6 +10,10 @@ import Cesium from "cesium";
 import { Cesium3DTileset, Viewer } from "resium";
 
 function App() {
+  const protocol = "http://";
+  const host = "127.0.0.1";
+  const port = ":5173";
+  const targetUrl = protocol + host + port;
   let viewer: Cesium.Viewer; // This will be raw Cesium's Viewer object.
   const handleReady = (tileset: Cesium.Cesium3DTileset) => {
     if (viewer) {
@@ -26,19 +30,27 @@ function App() {
       }}
     >
       <Cesium3DTileset
-        url="http://127.0.0.1:5174/13101_chiyoda-ku_2020_bldg_low_resolution/tileset.json" // ダウンロードした地図データのパス
+        url={`./13101_chiyoda-ku_2020_bldg_low_resolution/tileset.json`} // ダウンロードした地図データのパス
         onReady={handleReady}
       />
       <Cesium3DTileset
-        url="http://127.0.0.1:5174/13102_chuo-ku_2020_bldg_low_resolution/tileset.json" // ダウンロードした地図データのパス
+        url={`./13102_chuo-ku_2020_bldg_low_resolution/tileset.json`} // ダウンロードした地図データのパス
+        onReady={handleReady}
+      />
+      <Cesium3DTileset
+        url={`./13108_koto-ku_2020_bldg_low_resolution/tileset.json`} // ダウンロードした地図データのパス
         onReady={handleReady}
       />
       {/* <Cesium3DTileset
-        url="http://127.0.0.1:5174/13102_chuo-ku_2020_bldg_notexture/tileset.json" // ダウンロードした地図データのパス
+        url={`./13102_chuo-ku_2020_bldg_notexture/tileset.json`} // ダウンロードした地図データのパス
         onReady={handleReady}
       /> */}
       {/* <Cesium3DTileset
-        url="http://127.0.0.1:5174/13102_chuo-ku_2020_bldg_texture/tileset.json" // ダウンロードした地図データのパス
+        url={`./13102_chuo-ku_2020_bldg_texture/tileset.json`} // ダウンロードした地図データのパス
+        onReady={handleReady}
+      /> */}
+      {/* <Cesium3DTileset
+        url={`./13102_chuo-ku_2020_bldg_texture/tileset.json`} // ダウンロードした地図データのパス
         onReady={handleReady}
       /> */}
     </Viewer>
